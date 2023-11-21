@@ -27,10 +27,6 @@ public class NumberGus {
 
          if (user_input !=0) {
             boolean val_result = validatNumber(user_input);
-            if (val_result) {
-                 System.out.println("\t >>>>>>>>> Congradulation you have got Point <<<<<<<<<");
-                 System.out.println("\t >>>>>>>>> you have gused the Wrong Number <<<<<<<<<");
-            }
          } 
 
 
@@ -53,14 +49,16 @@ public class NumberGus {
     public static boolean validatNumber(int user_input) {
          // get the random number
          int random_value = random_object.nextInt(max_range-min_range+1)+min_range;
-
+         
+         System.out.println("\tComputer Gus number:\t"+random_value);
+         System.out.println("\tUser Selected Number is:\t"+user_input +" \n");
          // validate input values
-
          if (user_input == random_value) {
+             System.out.println("\t >>>>>>>>> Congradulation you have got Point <<<<<<<<<");
              return true;
          } else {
-            
-            return false;
+             System.out.println("\t >>>>>>>>> you have gused the Wrong Number <<<<<<<<<");
+             return false;
          }
     }
 }
