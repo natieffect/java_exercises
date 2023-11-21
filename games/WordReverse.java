@@ -12,6 +12,7 @@ public class WordReverse {
 
     public static void main(String[] args) {
      Greetings();
+     start();
     }
 
     public static void Greetings(){
@@ -20,21 +21,19 @@ public class WordReverse {
     }
 
     public static void start(){
-    
-
+        System.out.println("Final result:\t"+ getUserInput());
     }
 
     public static String getUserInput(){
         System.out.println("Please write word here:\t");
         try {
              String usr_input =  scanObj.nextLine();
-             char[] rev_input = new char[usr_input.length()];
-             int j= usr_input.length();
-             for (char c : usr_input.toCharArray()) {
-                rev_input[j--] =  c;
-             }
-             String usr_str = new String(rev_input);
-             return usr_str;
+             char[] input_rev = usr_input.toCharArray(); // chage string to character array value
+             usr_input = "";
+             for (int i = input_rev.length-1; i >=0; i--) {
+                usr_input +=input_rev[i];
+             }  
+             return usr_input;
         } catch (Exception InputMismatchException) {
             // TODO: handle exception
             System.err.println(" !!!!!! Please write correct type input !!!!!");
