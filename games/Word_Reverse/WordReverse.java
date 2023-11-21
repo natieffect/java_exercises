@@ -1,8 +1,7 @@
-package games;
+package games.Word_Reverse;
 
 import java.util.Scanner;
-import java.util.Random;
-import java.util.InputMismatchException;
+
 
 /**
  * WordReverse
