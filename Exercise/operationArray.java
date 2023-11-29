@@ -9,6 +9,10 @@ public class operationArray {
         System.out.println("Sum of array is:\t" + sum_value);
         sum_value = sumofArrayRecursive(arry_value, arry_value.length);
         System.out.println("Sum of Array Recursively:\t"+ sum_value);
+
+        // get the avarage values of the array
+        int avarage_value = avarageValue(arry_value);
+        System.out.println("avarage value is:\t"+ avarage_value );
     }
 
     // Returns the sum of array 
@@ -28,5 +32,11 @@ public class operationArray {
         }else{
             return sumofArrayRecursive(array_value, array_length-1) + array_value[array_length-1];
         }
+    }
+
+    public static int avarageValue(int[] array_value) {
+        
+        // get the avarage values of elements 
+        return sumofArrayRecursive(array_value, array_value.length)/array_value.length;
     }
 }
