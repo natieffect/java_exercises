@@ -33,7 +33,7 @@ public class sortintegerArray {
         return unsorted_array;
     }
 
-    // Sort the values of Array in Decending  order 
+    // Sort the values of Array in    order 
     public static int[] sortDecendingOrder(int[] unsorted_array) {
         
         for (int i = 0; i < unsorted_array.length; i++) {
