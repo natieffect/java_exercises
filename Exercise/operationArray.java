@@ -18,13 +18,17 @@ public class operationArray {
         // int[] to_remove_values = valueRemove(new int[]{1,2,4,6,8,6}, 2);
         // System.out.println("Remove values to remove "+to_remove_values);
 
-        // find minumin and maximim values of array
-        String min_max_value = findMaximunMinimumValue(new int[]{1,5,6,8,10,0,7,8,12});
-        System.out.println("Value:"+ min_max_value);
+        // // find minumin and maximim values of array
+        // String min_max_value = findMaximunMinimumValue(new int[]{1,5,6,8,10,0,7,8,12});
+        // System.out.println("Value:"+ min_max_value);
 
         // find the duplicated valies in the array
         String duplicated  = findDuplicateValue(new int[]{1,2,4,5,6,2,1,4,7});
         System.out.println("Duplicated values are :\n"+ duplicated);
+
+        // find common values in multiple arrays
+        duplicated = findDuplicateMultipleArray(new int[]{1,3,4,7,3} , new int[]{5,6,7,4});
+        System.out.println("Common values:\n"+duplicated);
 
         
     }
@@ -121,5 +125,43 @@ public class operationArray {
 
              return repeated_values;
          }
+    }
+
+    // method to find common values in array values 
+    public static String findDuplicateMultipleArray(int[] first_arrayValue, int[] second_arrayValue){
+
+        // check of arry values are correctly provided 
+        if (first_arrayValue.length == 0 || second_arrayValue.length == 0) {
+              return null;
+        } else 
+        {   
+            // string variable to hold duplicated vaues in b/n two arrays
+            String duplicated_values = "";
+            // find the array with higher length
+            if (first_arrayValue.length >= second_arrayValue.length) {
+                for (int i = 0; i < first_arrayValue.length; i++) {
+                    for (int j = 0; j < second_arrayValue.length; j++) 
+                    {
+                         if (first_arrayValue[i] == second_arrayValue[j]) {
+                             duplicated_values +="common value:"+  first_arrayValue[i]+"\t";
+                         }
+                    }
+                }
+            }else{
+                for (int i = 0; i < second_arrayValue.length; i++) {
+                    for (int j = 0; j < first_arrayValue.length; j++) {
+                        if (second_arrayValue[i] == first_arrayValue[j]) {
+                             duplicated_values +="common value:"+  second_arrayValue[i]+"\t";
+                         }
+                    }
+                }
+            }
+
+            return duplicated_values;
+        }
+      
+      
+
+
     }
 }
