@@ -4,19 +4,23 @@ public class operationArray {
     
     public static void main(String[] args) {
         // sum of array 
-        int[] arry_value = new int[] {1,6,8,9};
-        int sum_value = sumOfArray(arry_value);
-        System.out.println("Sum of array is:\t" + sum_value);
-        sum_value = sumofArrayRecursive(arry_value, arry_value.length);
-        System.out.println("Sum of Array Recursively:\t"+ sum_value);
+        // int[] arry_value = new int[] {1,6,8,9};
+        // int sum_value = sumOfArray(arry_value);
+        // System.out.println("Sum of array is:\t" + sum_value);
+        // sum_value = sumofArrayRecursive(arry_value, arry_value.length);
+        // System.out.println("Sum of Array Recursively:\t"+ sum_value);
 
-        // get the avarage values of the array
-        int avarage_value = avarageValue(arry_value);
-        System.out.println("avarage value is:\t"+ avarage_value );
+        // // get the avarage values of the array
+        // int avarage_value = avarageValue(arry_value);
+        // System.out.println("avarage value is:\t"+ avarage_value );
 
-        // remove values form the array
-        int[] to_remove_values = valueRemove(new int[]{1,2,4,6,8,6}, 2);
-        System.out.println("Remove values to remove "+to_remove_values);
+        // // remove values form the array
+        // int[] to_remove_values = valueRemove(new int[]{1,2,4,6,8,6}, 2);
+        // System.out.println("Remove values to remove "+to_remove_values);
+
+        // find minumin and maximim values of array
+        String min_max_value = findMaximunMinimumValue(new int[]{1,5,6,8,10,0,7,8,12});
+        System.out.println("Value:"+ min_max_value);
 
         
     }
@@ -72,5 +76,26 @@ public class operationArray {
             return  array_values;
         }
          return array_value;
+    }
+
+    // Write method to find the maximun and minumin values of an array
+    public static String findMaximunMinimumValue(int[] array_value) {     
+         if (array_value.length == 0) {
+             return null;
+         } else {
+                int max_value = array_value[0];
+                int min_value =array_value[0];
+
+                for (int i = 0; i < array_value.length; i++) {
+                    
+                    if (array_value[i]> max_value) {
+                         max_value = array_value[i];
+                    } else if (array_value[i] < min_value) {
+                         min_value = array_value[i];
+                    }
+                }
+            return "Max value:"+max_value+"\n Min Value:"+min_value+"";
+         }
+         
     }
 }
