@@ -22,6 +22,10 @@ public class operationArray {
         String min_max_value = findMaximunMinimumValue(new int[]{1,5,6,8,10,0,7,8,12});
         System.out.println("Value:"+ min_max_value);
 
+        // find the duplicated valies in the array
+        String duplicated  = findDuplicateValue(new int[]{1,2,4,5,6,2,1,4,7});
+        System.out.println("Duplicated values are :\n"+ duplicated);
+
         
     }
 
@@ -95,7 +99,27 @@ public class operationArray {
                     }
                 }
             return "Max value:"+max_value+"\n Min Value:"+min_value+"";
-         }
+         }         
+    }
+
+    public static String findDuplicateValue(int[] array_value){
          
+         // check of the array value is not empty
+         if (array_value.length == 0) {
+             return null;
+         } else {
+             // create string which hold repeated values 
+             String repeated_values = "";
+
+             for (int i = 0; i < array_value.length; i++) {
+                 for (int j = i+1; j < array_value.length; j++) {
+                     if (array_value[i] == array_value[j]) {
+                         repeated_values += "Repeated values:"+array_value[j]+"\t";
+                     }
+                 }
+             }
+
+             return repeated_values;
+         }
     }
 }
